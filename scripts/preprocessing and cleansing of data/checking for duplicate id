@@ -1,0 +1,8 @@
+print("Number of unique ppid:", users['ppid'].nunique())
+print("Duplicated ppid count:", users['ppid'].duplicated().sum())
+dup_ppid = users[users['ppid'].duplicated(keep=False)]
+print("Sample of duplicated ppid rows:")
+display(dup_ppid.head(10))
+
+print("\n--- total_engagement non-null sample ---")
+display(users[users['total_engagement'].notna()][['ppid', 'total_engagement', 'touchpoint_count']].head(10))
