@@ -29,12 +29,18 @@ Two tables provided:
 ### 2. Exploratory Analysis
 - **Sport popularity** — college football and NFL together account for 39% of all related post clicks
 - **Click rate per user** — NFL has the largest audience but lowest related post engagement per user, representing the highest opportunity for recommendation improvement
+<img width="1389" height="590" alt="image" src="https://github.com/user-attachments/assets/8bb0e76c-e505-4888-9447-3f86abc74afc" />
 - **Device behavior** — volleyball, combat sports and NFL/NBA audiences are mobile-heavy; MLB, NASCAR and Olympics audiences are desktop-heavy
 - **Peak activity** — click activity peaks between 3-7pm, with late night traffic likely representing US-based users
 - **Referrer quality** — Google drives 75% of traffic; Flipboard users are smallest in volume but highest in average visit count and loyalty
 - **User segmentation** — users segmented into casual (61%), regular (27%) and power (12%) based on visit count thresholds informed by data distribution
+<img width="592" height="582" alt="image" src="https://github.com/user-attachments/assets/aa41d78c-186c-4763-892e-55498465e63b" />
 - **Sport loyalty** — casual users click within their top sport 86% of the time; power users are more exploratory at 67.4%
 - **Segment click share** — power users represent 12% of audience but drive disproportionate related post engagement
+
+
+<img width="764" height="590" alt="image" src="https://github.com/user-attachments/assets/59f66a4e-97b0-43df-a5c6-f8930173ec0c" />
+
 
 ### 3. Novel Metric — Content Affinity Score (CAS)
 A composite weighted engagement score built to quantify user quality beyond simple segmentation:
