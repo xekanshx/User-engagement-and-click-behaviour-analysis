@@ -54,6 +54,7 @@ A composite weighted engagement score built to quantify user quality beyond simp
 | Interactivity | 15% | Total poll and quiz engagement |
 
 All components normalized using MinMaxScaler before combining. CAS tiered into Low (53%), Medium (35%) and High (11%) — distribution aligns with visit-based segmentation confirming metric validity.
+<img width="1389" height="490" alt="image" src="https://github.com/user-attachments/assets/68276c42-3278-4056-be23-684d44cd8192" />
 
 **Key findings:**
 - Golf, college football and WNBA users have highest average CAS despite smaller audiences
