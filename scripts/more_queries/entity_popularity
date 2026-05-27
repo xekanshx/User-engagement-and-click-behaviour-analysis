@@ -1,0 +1,14 @@
+query_top_entities = pd.read_sql_query("""
+    SELECT
+        top_entity,
+        COUNT(*) as user_count,
+        ROUND(AVG(visit_count), 2) as avg_visits,
+        ROUND(AVG(CAS), 3) as avg_cas
+    FROM users
+    WHERE top_entity != 'None'
+    GROUP BY top_entity
+    ORDER BY user_count DESC
+    LIMIT 10
+""", conn)
+
+print(query_top_entities)
