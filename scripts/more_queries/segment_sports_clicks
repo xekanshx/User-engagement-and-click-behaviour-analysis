@@ -1,0 +1,12 @@
+query_segment_sport = pd.read_sql_query("""
+    SELECT
+        u.user_segment,
+        r.sport,
+        COUNT(*) as clicks
+    FROM related r
+    JOIN users u ON r.ppid = u.ppid
+    GROUP BY u.user_segment, r.sport
+    ORDER BY u.user_segment, clicks DESC
+""", conn)
+
+print(query_segment_sport)
