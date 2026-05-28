@@ -1,0 +1,9 @@
+Model Training - KNN Collaborative Filtering
+We train a K-Nearest Neighbours model to find users with similar sport preferences.
+
+Key design decisions:
+
+Model is trained only on 831 users with actual click history not all 8,813 users
+Sport profile vectors are L1-normalised so users with more visits don't dominate
+K=10 neighbours balances personalisation with sufficient article coverage
+Why KNN for recommendation: KNN finds users who consume similar sport content and borrows their click behaviour.
