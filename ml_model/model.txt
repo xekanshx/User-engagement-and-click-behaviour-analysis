@@ -7,3 +7,31 @@ Model is trained only on 831 users with actual click history not all 8,813 users
 Sport profile vectors are L1-normalised so users with more visits don't dominate
 K=10 neighbours balances personalisation with sufficient article coverage
 Why KNN for recommendation: KNN finds users who consume similar sport content and borrows their click behaviour.
+
+## Recommendation Engine — Segment-Aware KNN
+
+The recommendation function personalises results based on two signals:
+**who the user is similar to** and **how exploratory their segment is**.
+
+**Segment-based sport diversity rule:**
+- Casual users → recommend from top 1 sport only (84% sport loyal in our analysis)
+- Regular users → recommend from top 2 sports
+- Power users → recommend from top 3 sports (most exploratory at 65.6% sport loyal)
+
+**Recommendation logic:**
+1. Find 10 nearest neighbours by sport profile similarity
+2. Collect articles those neighbours clicked
+3. Filter by allowed sports for this user's segment
+4. Weight each article by the neighbour's CAS score — higher affinity neighbours get more trust
+5. Rank by weighted score and return top 5
+
+**Cold start handling:**
+Users outside the 831 with click history receive popular articles within their top sport — ensures every user gets a recommendation regardless of history.
+
+**Evaluation metrics:**
+- Sport match rate — do recommendations match sports the user actually engages with? (primary metric)
+- Exact precision — do recommendations exactly match articles the user clicked? (secondary metric)
+
+**Results:**
+- Sport match rate: 65.6%
+- Exact precision: 1.2% (expected low — 1,544 candidate articles, only 5 recommended)
